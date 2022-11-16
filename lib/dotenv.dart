@@ -2,11 +2,7 @@ import 'dart:io';
 
 class DotEnv {
   final Map<String, dynamic> _env = {};
-
-  get env async {
-    await readEnv();
-    return _env;
-  }
+  dynamic operator [](String key) => _env[key];
 
   readEnv() async {
     final line = {};
